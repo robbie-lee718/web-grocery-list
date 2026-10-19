@@ -4,7 +4,7 @@ A sleek, lightweight, and mobile-friendly grocery list web application built wit
 
 ---
 
-## ✨ Features
+## Features
 
 - **Dynamic Item Management:** Add new items, toggle items as completed (with smooth strikethrough styling), and delete individual items.
 - **Data Persistence:** Automatically saves your list using the browser's `localStorage` so your items stay intact even after refreshing or closing the browser.
@@ -14,7 +14,7 @@ A sleek, lightweight, and mobile-friendly grocery list web application built wit
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** React (Vite)
 - **Styling:** Vanilla CSS (CSS3, Flexbox, Media Queries)
