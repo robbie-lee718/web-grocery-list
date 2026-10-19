@@ -1,0 +1,159 @@
+body {
+    background-color: #eeeeee;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+/* --- Mobile Styles (Your preferred layout) --- */
+.grocery-container {
+    max-width: 90%;
+    margin: 15% auto;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 24px;
+}
+
+.grocery-form {
+    margin-bottom: 24px;
+}
+
+.grocery-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 10px;
+}
+
+.grocery-input:focus {
+    border-color: #3b82f6;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    height: 44px;
+    width: 100%;
+}
+
+.add-btn:hover {
+    background-color: #2563eb;
+}
+
+.grocery-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.grocery-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+}
+
+.item-name {
+    flex: 1;
+    cursor: pointer;
+    font-size: 16px;
+    color: #334155;
+}
+
+.grocery-item.completed {
+    background: #f8fafc;
+    opacity: 0.6;
+}
+
+.grocery-item.completed .item-name {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #fee2e2;
+}
+
+.empty-text {
+    text-align: center;
+    color: #94a3b8;
+    margin-top: 20px;
+}
+
+.clear-btn {
+  width: 100%;
+  background-color: transparent;
+  color: #ef4444;
+  border-style: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s;
+}
+
+.clear-btn:hover {
+  background-color: #fee2e2;
+}
+
+
+/* --- Computer / Desktop Styles (Screens wider than 640px) --- */
+@media (min-width: 640px) {
+  .grocery-container {
+    max-width: 480px; /* Prevents it from getting too wide on large screens */
+    margin: 60px auto;
+    padding: 35px;
+  }
+
+  /* Automatically turns the form horizontal on desktop */
+  .grocery-form {
+    display: flex;
+    gap: 10px;
+  }
+
+  .grocery-input {
+    margin-bottom: 0; /* Removes mobile spacing */
+  }
+
+  .add-btn {
+    width: auto; /* Makes button size to its content instead of full width */
+  }
+}
