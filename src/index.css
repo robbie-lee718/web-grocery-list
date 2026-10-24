@@ -1,21 +1,44 @@
-/* 1. Modern CSS Reset */
+/* --- Global Theme Variables --- */
+:root {
+  --bg-color: #eeeeee;
+  --container-bg: #ffffff;
+  --text-color: #1d1d1d;
+  --item-bg: #f1f5f9;
+  --item-text: #1d1d1d;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-text: #1d1d1d;
+  --clear-btn: #ef4444;
+  --clear-btn-hover: #ef444433;
+  --icon-color: #1d1d1d;
+}
+
+/* --- Dark Mode Variables (Applied when body has .dark-mode) --- */
+body.dark-mode {
+  --bg-color: #0f172a;
+  --container-bg: #1e293b;
+  --text-color: #cccccc;
+  --item-bg: #334155;
+  --item-text: #cccccc;
+  --input-bg: #0f172a;
+  --input-border: #475569;
+  --input-text: #f8fafc;
+  --icon-color: #cccccc;
+}
+
+/* Global Reset & Defaults */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, p, ul {
+body {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-}
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
-/* 2. Global Defaults */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f8fafc;
-  color: #1e293b;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
