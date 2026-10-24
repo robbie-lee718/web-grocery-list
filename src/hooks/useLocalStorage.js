@@ -1,15 +1,28 @@
 import { useState, useEffect } from 'react';
 
 export default function useLocalStorage(key, initialValue) {
-  // 1. Lazy state initialization
   const [value, setValue] = useState(() => {
-    const saved = localStorage.getItem(key);
-    return saved ? JSON.parse(saved) : initialValue;
+    try {
+      const saved = localStorage.getItem(key);
+      
+      // If nothing is saved, or it's literally the string "undefined" or "null"
+      if (saved === null || saved === 'undefined' || saved === 'null') {
+        return initialValue;
+      }
+      
+      return JSON.parse(saved);
+    } catch (error) {
+      console.error(`Error parsing localStorage key "${key}":`, error);
+      return initialValue; // Fallback safely if JSON is corrupted
+    }
   });
 
-  // 2. Sync to localStorage when value changes
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.error(`Error setting localStorage key "${key}":`, error);
+    }
   }, [key, value]);
 
   return [value, setValue];
